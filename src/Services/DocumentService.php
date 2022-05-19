@@ -37,7 +37,9 @@ class DocumentService
             $data['user_id'] = Auth::id();
         }
         $document = $this->document->create($data);
-        $document->groups()->sync($data['groups']);
+        if(isset($data['groups'])){
+            $document->groups()->sync($data['groups']);
+        }
         if (isset($data['content']) && $document) {
             
             $document->contents()->create($data);
@@ -50,7 +52,9 @@ class DocumentService
     {
         $document = $this->document->find($id);
         $document->update($data);
-        $document->groups()->sync($data['groups']);
+        if(isset($data['groups'])){
+            $document->groups()->sync($data['groups']);
+        }
         if (isset($data['content']) && $document) {
             if (empty($data['user_id']) && Auth::check()) {
                 $data['user_id'] = Auth::id();
