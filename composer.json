@@ -1,6 +1,6 @@
 {
     "name": "confrariaweb/laravel-document",
-    "version": "dev-master",
+    "version": "1.0.0",
     "description": "Laravel document package",
     "keywords": [
         "document",
@@ -16,7 +16,7 @@
         }
     ],
     "require": {
-        "confrariaweb/laravel-file": "dev-master"
+        "confrariaweb/laravel-file": "1.0.0"
     },
     "autoload": {
         "psr-4": {
